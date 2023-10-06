@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <style>
+
+    </style>
+
+<article id="wrapper">
+
+    <p>para<span> span</span></p>
+    <p>para<span> span</span></p>
+    <p>para<span> span</span></p>
+
+</article>
+
+
+
+    <script>
+        //p and span both get target we want only span taget
+// let element=document.querySelector('#wrapper');   
+// element.addEventListener('click',function(event){//listner apply on wraper means article tag
+//     console.log('click on '+event.target.textContent);
+// });
+
+
+//target only  span
+let element=document.querySelector('#wrapper');   
+element.addEventListener('click',function(event){//listner apply on wraper means article tag
+    if(event.target.nodeName=='SPAN'){//click on para not run click on spnan give op
+    console.log('click on '+event.target.textContent);
+}
+});
+
+    </script>
+</body>
+</html>
