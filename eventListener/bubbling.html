@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Bubbling Example</title>
+</head>
+<body>
+  <div id="outer">
+    <p>Click me to bubble up!</p>
+  </div>
+
+  <script>
+    // Get a reference to the outer div element
+    var outerDiv = document.getElementById("outer");
+
+    // Add a click event listener to the outer div
+    outerDiv.addEventListener("click", function (event) {
+      alert("Outer div clicked!");
+      console.log("Event type: " + event.type);
+      console.log("Target: " + event.target);
+    },false);
+
+    // Add a click event listener to the paragraph
+    var paragraph = outerDiv.querySelector("p");
+    paragraph.addEventListener("click", function (event) {
+      alert("Paragraph clicked!");
+      console.log("Event type: " + event.type);
+      console.log("Target: " + event.target);
+    },false);
+  </script>
+</body>
+</html>

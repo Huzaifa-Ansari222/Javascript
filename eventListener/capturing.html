@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Capturing Example</title>
+</head>
+<body>
+  <div id="outer">
+    <p>Click me to capture down!</p>
+  </div>
+
+  <script>
+    // Get a reference to the outer div element
+    var outerDiv = document.getElementById("outer");
+
+    // Add a click event listener to the outer div with event capturing
+    outerDiv.addEventListener("click", function (event) {
+      alert("Outer div captured!");
+      console.log("Event type: " + event.type);
+      console.log("Target: " + event.target);
+    }, true);
+
+    // Add a click event listener to the paragraph with event capturing
+    var paragraph = outerDiv.querySelector("p");
+    paragraph.addEventListener("click", function (event) {
+      alert("Paragraph captured!");
+      console.log("Event type: " + event.type);
+      console.log("Target: " + event.target);
+    }, true);
+  </script>
+</body>
+</html>

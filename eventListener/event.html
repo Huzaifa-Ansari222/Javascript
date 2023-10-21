@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Listener Example</title>
+</head>
+<body>
+
+<button id="myButton">Click Me!</button>
+
+<script>
+// Get a reference to the button element by its id
+var button = document.getElementById("myButton");
+
+// Define a function that will be executed when the button is clicked
+function buttonClickHandler() {
+  alert("Button clicked!");
+}
+
+// Add an event listener to the button element
+button.addEventListener("click", buttonClickHandler);
+
+
+var button = document.getElementById("myButton");
+
+// Define an event function that takes the event as a parameter
+function buttonClickHandler(event) {
+  alert("Button clicked! Event type: " + event.type);
+}
+
+// Add an event listener to the button element
+button.addEventListener("click", buttonClickHandler);
+</script>
+</body>
+</html>
