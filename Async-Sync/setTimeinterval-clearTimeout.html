@@ -1,0 +1,36 @@
+<!-- //Async  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Learning Async </h1>
+    <button id="stop">click me to stop timeout function</button>
+
+    <script>
+        //1
+        const sayName = function(){
+            console.log("huzaifa");
+        }
+        setTimeout(sayName,3000)//run after 2sec
+
+        //2
+        const changeTitle= function (){
+            const chnge=document.querySelector('h1');
+            chnge.innerHTML="Chnge by setTime out";
+        }
+        const stopMe=setTimeout(changeTitle,3000);
+
+        const button=document.querySelector('#stop');
+        button.addEventListener('click',function(){
+            clearTimeout(stopMe);//it stop the function of setTimout
+            console.log("stoped");
+        })
+
+    </script>
+</body>
+</html>
