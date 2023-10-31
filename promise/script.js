@@ -35,3 +35,29 @@ const promiseThree=new Promise(function(resolve,reject){
 promiseThree.then(function(Username){
     console.log(Username);
 })
+
+
+const promiseFour=new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error =true;//false
+        if(!error){
+            resolve({username:'huz',pass:'hi'});
+        }
+        else{
+            reject(':::ERROR404:::');
+        }
+    },5000)
+})
+
+promiseFour
+.then((user)=>{
+    console.log(user);
+    return user.username;
+})
+.then((myUsername)=>{//chaining *
+    console.log(myUsername);
+
+})
+ .catch(function(error){//catach error
+    console.log(error);
+}).finally(()=>{console.log('promise rejected/rsolved');})//default state
