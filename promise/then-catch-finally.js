@@ -36,7 +36,6 @@ promiseThree.then(function(Username){
     console.log(Username);
 })
 
-
 const promiseFour=new Promise(function(resolve, reject){
     setTimeout(function(){
         let error =true;//false
@@ -58,6 +57,31 @@ promiseFour
     console.log(myUsername);
 
 })
- .catch(function(error){//catach error
+.catch(function(error){//catach error
     console.log(error);
-}).finally(()=>{console.log('promise rejected/rsolved');})//default state
+})
+.finally(()=>{console.log('promise rejected/rsolved');})//default state
+
+
+const promisefive=new Promise(function(){
+    setTimeout(function(){
+        let error=true;
+        if(!error){
+            resolve({username:"javascript",pass:"123"})
+        }else{
+            reject('::::ERROR::::')
+        }
+    },1000)
+})
+// promisefive.then 
+//try catch method
+async function consumePromiseFive(){//same like .then.catch
+    try {
+        const response =await promisefive//wait for respone/error
+        console.log(response);
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+consumePromiseFive();
